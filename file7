@@ -1,0 +1,30 @@
+public class element {
+	
+	public static void main(String[] args) {
+		
+		
+		
+		System.setProperty("webdriver.chrome.driver", "H:\\chromedriver.exe");
+		
+		WebDriver driver=new ChromeDriver();
+		
+		driver.get("https://www.facebook.com/");
+		
+		//1 Return single element
+		
+		//WebElement elemnt = driver.findElement(By.linkText("Create a Page"));
+		
+		//elemnt.click();
+		
+		//2.
+		//WebElement obj = driver.findElement(By.xpath("//div[@id='pageFooterChildren']//li"));
+		
+		//obj.click();
+		
+		//3
+		//throw selenium.NoSuchElementException if xpath is wrong
+		
+		WebElement thr = driver.findElement(By.xpath("//input[@id='passwww']"));
+		
+		thr.sendKeys("oo");
+		
