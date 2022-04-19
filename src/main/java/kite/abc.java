@@ -1,11 +1,10 @@
 package kite;
 
-import multi_level_inheristance.District;
-import multi_level_inheristance.State;
+;
 
-public class abc {
+
 	
-	public class District extends State {
+	public class District  {
 
 		public static void admin()
 		{
