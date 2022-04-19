@@ -1,0 +1,35 @@
+public class dumy {
+	
+	public static void main(String[] args) {
+		
+		System.setProperty("webdriver.chrome.driver", "H:\\chromedriver.exe");
+		
+		WebDriver driver=new ChromeDriver();
+			  
+		    
+			
+			driver.navigate().to("https://www.toponwardticket.com/dummy-ticket/?gclid=Cj0KCQjw0umSBhDrARIsAH7FCocHww7gNRH7dwYBBqAgUH29fZVGANGXRXLb0VurJcsCBr9psvVeIoQaAsvqEALw_wcB   ");
+			
+			driver.manage().window().maximize();
+			
+			driver.findElement(By.xpath("//input[@id='dummy-ticket-date-departure']")).click();
+			
+			Select month= new Select(driver.findElement(By.xpath("//select[@class='ui-datepicker-month']")));
+
+			 month.selectByVisibleText("Sep");
+			
+			Select year= new Select(driver.findElement(By.xpath("//select[@class='ui-datepicker-year']")));
+			
+			year.selectByVisibleText("2025");
+			
+			String date= "30";
+			
+			List<WebElement> ele = driver.findElements(By.xpath("//table[@class='ui-datepicker-calendar']//td"));
+			
+			for(WebElement elem:ele) {
+				
+				String dte= elem.getText();
+				
+				if(dte.equals(date)) {
+					elem.click();
+					break;
