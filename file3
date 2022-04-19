@@ -1,0 +1,17 @@
+public static void main(String[] args) {
+		
+		System.setProperty("webdriver.gecko.driver","K:\\geckodriver.exe");
+		  
+	     WebDriver driver=new FirefoxDriver();
+		
+		driver.navigate().to("https://www.redbus.in/");
+		
+		driver.manage().window().maximize();
+		
+		driver.findElement(By.xpath("//input[@class='db']")).click();
+		
+		String year="2022";
+		String month = "june";
+		String date="18";
+		
+		while(true) {
