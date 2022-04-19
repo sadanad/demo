@@ -1,0 +1,32 @@
+public class upsc {
+	
+public static void main(String[] args) {
+		
+		System.setProperty("webdriver.chrome.driver", "H:\\chromedriver.exe");
+		
+		WebDriver d=new ChromeDriver();
+		
+		d.navigate().to("https://upsconline.nic.in/ora/RegistrationFinal.php");
+		
+		d.manage().window().maximize();
+		
+		d.findElement(By.xpath("//img[@src='oraauth/candidate/css/images/calender.gif']")).click();
+		
+		Select month= new Select(d.findElement(By.xpath("//select[@name='MonthSelector']")));
+		
+		month.selectByVisibleText("December");
+				
+		Select year= new Select(d.findElement(By.xpath("//select[@name='YearSelector']")));		
+		
+		year.selectByVisibleText("1988");
+		
+		String date ="31";
+		
+		List<WebElement> alldate = d.findElements(By.xpath("//table[@style='border-spacing:1px;border-collapse:separate;']//td"));
+		for(WebElement elem:alldate) {
+			
+			String dte= elem.getText();
+			
+			if(dte.equals(date)) {
+				elem.click();
+				break;
